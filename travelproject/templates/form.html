@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    input[type=text], input[type=password],input[type=date],input[type=number],input[type=phonenumber],input[type=email],input[type=age],input[type=district],input[type=branches],input[type=accounttype],input[type=materials]{
+
+    width: 300px;
+    height: 20px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid ;
+    box-sizing: border-box;
+    }
+    button {
+          background-color: #04AA6D;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: 1px solid ;
+          display: inline-block;
+          width: 20%;
+
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+</style>
+<body style="text-align:center;">
+<h2>Form</h2>
+
+<form action="form" method="post">
+    {% csrf_token %}
+    <div class="container">
+        <label for="username"><b>USername</b></label><br>
+        <input type="text" placeholder="Enter Username" name="username" required><br>
+
+        <label for="dob"><b>Dob</b></label><br>
+        <input type="date" placeholder="Enter dob" name="dob" required><br>
+
+        <label for="age"><b>age</b></label><br>
+        <input type="number" placeholder="Enter age" name="age" required><br>
+
+        <label for="gender"><b>gender</b></label><br>
+
+        <input type="radio" name="gender"/> Male <br>
+        <input type="radio" name="gender"/> Female <br>
+        <input type="radio" name="gender"/> Other
+        <br>
+
+<!--        <input type="text" placeholder="Enter gender" name="age" required><br>-->
+
+        <label for="phonenumber"><b>phonenumber</b></label><br>
+        <input type="number" placeholder="Enter phonenumber" name="phonenumber" required><br>
+
+        <label for="email1"><b>email</b></label><br>
+        <input type="email1" placeholder="Enter email address" name="email1" required><br>
+
+        <label for="address"><b>Adress</b></label><br>
+        <input type="text" placeholder="Enter Adress" name="address" required><br>
+
+        <label for="district"><b>District</b></label><br>
+<!--        <input  type="text" placeholder="Enter the District" name="district" required><br>-->
+            <form action="/action_page.php">
+<!--              <label for="cars">Choose a car:</label>-->
+              <select  input  type="text" placeholder="Enter the District" name="district" required>
+                <option value="district">Alappuzha</option>
+                <option value="district">Eranakulam</option>
+                <option value="district">Kozhikode</option>
+                <option value="district">Malappuram</option>
+              </select>
+              <br><br>
+
+            </form>
+
+        <label for="branches"><b>Branches</b></label><br>
+<!--        <input  type="text" placeholder="Enter the District" name="district" required><br>-->
+            <form action="/action_page.php">
+<!--              <label for="cars">Choose a car:</label>-->
+              <select  input  type="text" placeholder="Enter the Branch" name="branches" required>
+                <option value="branches">Alappuzha</option>
+                <option value="branches">Eranakulam</option>
+                <option value="branches">Kozhikode</option>
+                <option value="branches">Malappuram</option>
+              </select>
+              <br><br>
+
+            </form>
+
+        <label for="accounttype"><b>Account Type</b></label><br>
+<!--        <input type="accounttype" placeholder="Enter accounttype" name="accounttype" required><br>-->
+            <form action="/action_page.php">
+<!--              <label for="cars">Choose a car:</label>-->
+              <select  input  type="text" placeholder="Enter the Account Type" name="accounttype" required>
+                <option value="accounttype">Saving Account</option>
+                <option value="accounttype">Current Account</option>
+
+              </select>
+              <br><br>
+
+            </form>
+          <label for="materials"><b>Materials Provided</b></label><br>
+          <input type="checkbox"  name="materials" >
+          <label for="materials"> Debit card</label><br>
+          <input type="checkbox"  name="materials" >
+          <label for="materials"> Credit card</label><br>
+          <input type="checkbox"  name="materials" >
+          <label for="materials"> Cheque book</label><br><br>
+
+<!--        <input type="text" placeholder="Enter materials" name="materials" required><br>-->
+
+
+            </form>
+        <button type="submit">Submit</button>
+        <button type="submit" ><a href="credentials/logout"></a>logout</button>
+
+    </div>
+
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>

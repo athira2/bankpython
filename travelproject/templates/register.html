@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    input[type=text], input[type=password] {
+
+    width: 300px;
+    height: 20px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid ;
+    box-sizing: border-box;
+    }
+    button {
+          background-color: #04AA6D;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: 1px solid ;
+          display: inline-block;
+          width: 20%;
+
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+</style>
+<body style="text-align:center;">
+<h2>Registration</h2>
+
+<form action="register" method="post">
+    {% csrf_token %}
+    <div class="container">
+        <label for="username"><b>Username</b></label><br>
+        <input type="text" placeholder="Enter Username" name="username" required><br>
+
+        <label for="first_name"><b>first_name</b></label><br>
+        <input type="text" placeholder="Enter Firstname" name="first_name" required><br>
+
+        <label for="last_name"><b>last_name</b></label><br>
+        <input type="text" placeholder="Enter Lastname" name="last_name" required><br>
+
+        <label for="email"><b>email</b></label><br>
+        <input type="text" placeholder="Enter email address" name="email" required><br>
+
+        <label for="password"><b>Password</b></label><br>
+        <input type="password" placeholder="Enter Password" name="password" required><br>
+
+        <label for="password"><b>Password</b></label><br>
+        <input type="password" placeholder="Confirm your Password" name="password1" required><br>
+
+        <button type="submit">Register</button>
+    </div>
+
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>
